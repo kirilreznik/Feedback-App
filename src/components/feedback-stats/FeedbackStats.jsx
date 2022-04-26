@@ -1,4 +1,5 @@
 import "./FeedbackStats.css";
+import PropTypes from "prop-types";
 
 const FeedbackStats = ({ feedbackData }) => {
   let average =
@@ -9,9 +10,13 @@ const FeedbackStats = ({ feedbackData }) => {
   return (
     <div className="feedback-stats">
       <h4>{feedbackData.length} Reviews</h4>
-      <h4>{average}</h4>
+      <h4> Average rating {isNaN(average) ? 0 : average}</h4>
     </div>
   );
+};
+
+FeedbackStats.prpTypes = {
+  feedbackData: PropTypes.array.isRequired,
 };
 
 export default FeedbackStats;
