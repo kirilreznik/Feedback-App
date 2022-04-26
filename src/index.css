@@ -67,3 +67,28 @@ form {
   text-align: center;
   color: rebeccapurple;
 }
+
+@media (max-width: 600px) {
+  .rating li {
+    margin: 10px 3px;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0 40px;
+  }
+}
+ul {
+  list-style: none;
+}
+[type="radio"] {
+  opacity: 0;
+}
+
+[type="radio"]:checked ~ label {
+  background: #ff6a95;
+  color: #fff;
+}
