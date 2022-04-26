@@ -1,0 +1,8 @@
+.feedback-stats {
+  max-width: 95%;
+  margin: auto;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
