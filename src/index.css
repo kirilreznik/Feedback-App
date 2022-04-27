@@ -1,5 +1,6 @@
 body {
   background-color: #1f0c26;
+  color: #fff;
   margin: 0;
   max-width: 768px;
   margin: auto;
@@ -91,4 +92,17 @@ ul {
 [type="radio"]:checked ~ label {
   background: #ff6a95;
   color: #fff;
+}
+.about-link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-link a {
+  color: #fff;
+  cursor: pointer;
+}
+
+.about-link a:hover {
+  color: #ff6a95;
 }
