@@ -1,19 +1,19 @@
 {
   "feedback": [
     {
-      "id": 1,
+      "text": "11111111111111111",
       "rating": 10,
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae."
+      "id": 1
     },
     {
-      "id": 2,
-      "rating": 9,
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae."
+      "text": "xzffsdfsdfsdfsdfsdfsdf",
+      "rating": 10,
+      "id": 2
     },
     {
-      "id": 3,
-      "rating": 8,
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae."
+      "text": "dsfsdfsdfsdfsf",
+      "rating": 5,
+      "id": 3
     }
   ]
 }

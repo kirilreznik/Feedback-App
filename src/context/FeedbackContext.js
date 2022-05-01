@@ -16,15 +16,12 @@ export const FeedbackProvider = ({ children }) => {
   }, []);
 
   const fetchFeedback = async () => {
-    const response = await fetch(
-      "http://localhost:5000/feedback?_sort=id&_order=desc",
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      }
-    );
+    const response = await fetch("/feedback?_sort=id&_order=desc", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
     if (response.ok) {
       const data = await response.json();
       setFeedback(data);
@@ -32,8 +29,15 @@ export const FeedbackProvider = ({ children }) => {
     }
   };
 
-  const deleteFeedback = (id) => {
+  const deleteFeedback = async (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
+      const response = await fetch(`/feedback/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
       setFeedback(
         feedback.filter((item) => {
           return item.id !== id;
@@ -42,21 +46,42 @@ export const FeedbackProvider = ({ children }) => {
     }
   };
 
-  const addFeedback = (newFeedback) => {
-    newFeedback.id = uuid();
-    setFeedback([newFeedback, ...feedback]);
+  const addFeedback = async (newFeedback) => {
+    const response = await fetch("/feedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(newFeedback),
+    });
+    const data = await response.json();
+    setFeedback([data, ...feedback]);
   };
 
   const editFeedback = (item) => {
     setFeedbackEdit({ item, edit: true });
   };
 
-  const updateFeedback = (id, newItem) => {
+  const updateFeedback = async (id, newItem) => {
+    const response = await fetch(`/feedback/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(newItem),
+    });
+    const data = await response.json();
     setFeedback(
       feedback.map((item) => {
-        return item.id === id ? { ...item, ...newItem } : item;
+        return item.id === data.id ? { ...item, ...data } : item;
       })
     );
+    setFeedbackEdit({
+      item: {},
+      edit: false,
+    });
   };
 
   return (
