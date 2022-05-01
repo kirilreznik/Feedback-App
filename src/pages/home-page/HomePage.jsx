@@ -6,13 +6,15 @@ import AboutIconLink from "../../components/shared/AboutIconLink";
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <Header />
-      <FeedbackForm />
-      <FeedbackStats />
-      <FeedbackList />
-      <AboutIconLink />
-    </div>
+      <div className="container">
+        <FeedbackForm />
+        <FeedbackStats />
+        <FeedbackList />
+        <AboutIconLink />
+      </div>
+    </>
   );
 };
 
