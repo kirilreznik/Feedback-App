@@ -1,4 +1,4 @@
-# Herolo weather app
+# Feedback app
 
 Deployed on Netlify : https://kiril-reviews-app.netlify.app/
 
