@@ -34,7 +34,7 @@ const FeedBackItem = ({ id, rating, text }) => {
 };
 
 FeedBackItem.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   rating: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
 };
