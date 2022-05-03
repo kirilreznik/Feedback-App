@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect } from "react";
-import { v4 as uuid } from "uuid";
 
 const FeedbackContext = createContext();
 
@@ -31,7 +30,7 @@ export const FeedbackProvider = ({ children }) => {
 
   const deleteFeedback = async (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
-      const response = await fetch(`/feedback/${id}`, {
+      await fetch(`/feedback/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
